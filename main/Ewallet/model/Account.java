@@ -5,6 +5,8 @@ public class Account {
     private String password;
     private boolean active;
 
+    private double balance;
+
     public Account() {
     }
 
@@ -37,4 +39,14 @@ public class Account {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+
 }

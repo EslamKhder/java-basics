@@ -24,4 +24,22 @@ public class AccountServiceImpl implements AccountService {
         walletSystem.getAccounts().add(account);
         return true;
     }
+
+    @Override
+    public boolean findAccount(Account account) {
+        List<Account> accounts = walletSystem.getAccounts(); // 5
+
+        for(int i=0;i<accounts.size();i++){ // 0    0<5   0 1 2 3 4
+            if (accounts.get(i).getUserName().equals(account.getUserName())
+                && accounts.get(i).getPassword().equals(account.getPassword())){
+                    return true;
+                }
+        }
+
+        return false;
+    }
+
+    // TODO create function to withdraw
+
+    // TODO create function with deposit
 }

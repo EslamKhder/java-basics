@@ -4,4 +4,5 @@ import main.Ewallet.model.Account;
 
 public interface AccountService {
     boolean createAccount(Account account);
+    boolean findAccount(Account account);
 }
