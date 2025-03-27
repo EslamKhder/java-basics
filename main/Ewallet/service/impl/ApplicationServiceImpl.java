@@ -81,12 +81,68 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     private void mainPage(Account account) {
-        System.out.println("a.deposit   b.withdraw  c.transfer  d.show profile details   c.exit");
+        System.out.println("a.deposit   b.withdraw  c.transfer  d.show profile details   e.exit");
 
         // TODO pls create switch case
         // TODO every case must match function and apply feature for (multi loop, 4 times invalid must out)
 
+        int counter = 0;
+        while (true) {
+            char choose = scanner.next().charAt(0);
 
+            boolean exit = false;
+            switch (choose) {
+                case 'a':
+                    deposit(account);
+                    break;
+                case 'b':
+                    withdraw(account);
+                    break;
+                case 'c':
+                    transfer(account);
+                    break;
+                case 'd':
+                    showProfileDetails(account);
+                    break;
+                case 'e':
+                    System.out.println("thanks fro your time");
+                    break;
+                default:
+                    counter++;
+                    if (counter != 4) {
+                        System.out.println("Invalid Choose Pls try another one :(");
+                    }
+            }
+
+            if (exit) {
+                break;
+            }
+
+            if (counter == 4) {
+                System.out.println("pls try later");
+                break;
+            }
+        }
+    }
+
+    private void showProfileDetails(Account account) {
+        // TODO call account service to showProfileDetails
+    }
+
+    private void transfer(Account account) {
+        // TODO take username of user you need to transfer
+        // TODO take money that you need to transfer
+        // TODO call account service to transfer
+    }
+
+    private void withdraw(Account account) {
+        // TODO take money from user
+        // TODO call account service to withdraw
+    }
+
+    private void deposit(Account account) {
+        // TODO take money from user
+        // TODO call account service to deposit
     }
 
     private void createAccount() {

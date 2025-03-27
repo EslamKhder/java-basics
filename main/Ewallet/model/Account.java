@@ -1,6 +1,8 @@
 package main.Ewallet.model;
 
 public class Account {
+
+    private String fullName;
     private String userName;
     private String password;
     private boolean active;
